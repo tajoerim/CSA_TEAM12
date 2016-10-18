@@ -56,6 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RobotViewResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="SwitchControl.cs">
+      <SubType>usercontrol</SubType>
+    </Compile>
+    <Compile Include="SwitchControl.designer.cs">
+      <DependentUpon>SwitchControl.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RobotCtrl\RobotCtrl.csproj">
@@ -70,6 +76,9 @@
     <EmbeddedResource Include="RobotViewResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RobotViewResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwitchControl.resx">
+      <DependentUpon>SwitchControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
