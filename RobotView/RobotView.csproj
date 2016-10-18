@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConsoleControl.cs">
+      <SubType>usercontrol</SubType>
+    </Compile>
+    <Compile Include="ConsoleControl.designer.cs">
+      <DependentUpon>ConsoleControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="LedControl.cs">
       <SubType>usercontrol</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConsoleControl.resx">
+      <DependentUpon>ConsoleControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LedControl.resx">
       <DependentUpon>LedControl.cs</DependentUpon>
     </EmbeddedResource>

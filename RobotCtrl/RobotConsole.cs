@@ -55,7 +55,7 @@ namespace RobotCtrl
         public void Dispose()
         {
             digitalIn.Dispose();
-            digitalOut.Dispose();
+            //digitalOut.Dispose();
         }
         #endregion
 

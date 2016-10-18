@@ -5,6 +5,7 @@
 //    $Id: DigitalOut.cs 1024 2016-10-11 12:06:49Z chj-hslu $
 //------------------------------------------------------------------------------
 using System;
+using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
@@ -53,10 +54,7 @@ namespace RobotCtrl
         public int Data
         {
             get { return data; }
-            set 
-            { 
-                // Todo 
-            }
+            set { data = value; }
         }
         #endregion
 
@@ -83,8 +81,21 @@ namespace RobotCtrl
         /// <returns>den aktuellen Zustand des Bits</returns>
         public virtual bool this[int bit]
         {
-            get { return false; /* ToDo */  }
-            set { /* ToDo */ }
+            get
+            {
+                if (bit < 0 || bit > 3)
+                {
+                    return false;
+                }
+                return new BitArray(new int[] { this.data }).Get(bit);
+            }
+            set
+            {
+                if (bit < 0 || bit > 3) return;
+                var bitArray = new BitArray(new int[] { this.data });
+                bitArray.Set(bit, value);
+                this.data = Convert.ToInt32(bitArray);
+            }
         }
         #endregion
     }

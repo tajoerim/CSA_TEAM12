@@ -1,6 +1,8 @@
-﻿namespace FancyFunnyCar
+﻿using RobotView;
+
+namespace FancyFunnyCar
 {
-    partial class Form1
+    partial class FancyFunnyCar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +30,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.consoleControl = new ConsoleControl();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(186, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 155);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Click Me!";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Form1
+            // FancyFunnyCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(638, 455);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(607, 127);
+            this.Name = "FancyFunnyCar";
+            this.Text = "FancFunnyCar - EPIC Robot";
+            this.Controls.Add(this.consoleControl);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private ConsoleControl consoleControl;
     }
 }
 
