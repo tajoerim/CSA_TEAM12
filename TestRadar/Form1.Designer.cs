@@ -1,8 +1,9 @@
-﻿using RobotView;
+﻿using RobotCtrl;
+using RobotView;
 
-namespace FancyFunnyCar
+namespace TestRadar
 {
-    partial class FancyFunnyCar
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,26 +31,33 @@ namespace FancyFunnyCar
         /// </summary>
         private void InitializeComponent()
         {
-            this.consoleControl = new ConsoleControl();
+            this.radarView1 = new RobotView.RadarView();
             this.SuspendLayout();
             // 
-            // FancyFunnyCar
+            // radarView1
+            // 
+            this.radarView1.Location = new System.Drawing.Point(0, 0);
+            this.radarView1.Name = "radarView1";
+            this.radarView1.Radar = null;
+            this.radarView1.Size = new System.Drawing.Size(635, 42);
+            this.radarView1.TabIndex = 0;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(607, 127);
-            this.Name = "FancyFunnyCar";
-            this.Text = "FancFunnyCar - EPIC Robot";
-            this.Controls.Add(this.consoleControl);
+            this.ClientSize = new System.Drawing.Size(638, 58);
+            this.Controls.Add(this.radarView1);
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ConsoleControl consoleControl;
+        private RadarView radarView1;
     }
 }
 
