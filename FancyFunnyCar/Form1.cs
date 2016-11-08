@@ -24,7 +24,6 @@ namespace TestConsole
 
             rc = new RobotConsole();
             consoleView1.RobotConsole = rc;
-            consoleView2.RobotConsole = rc;
             rc[Switches.Switch1].SwitchStateChanged += SwitchStateChanged;
             rc[Switches.Switch2].SwitchStateChanged += SwitchStateChanged;
             rc[Switches.Switch3].SwitchStateChanged += SwitchStateChanged;

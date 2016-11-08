@@ -37,8 +37,8 @@ namespace RobotView
             this.ledView4 = new RobotView.LedView();
             this.switchView1 = new RobotView.SwitchView();
             this.switchView2 = new RobotView.SwitchView();
-            this.switchView3 = new RobotView.SwitchView();
             this.switchView4 = new RobotView.SwitchView();
+            this.switchView3 = new RobotView.SwitchView();
             this.SuspendLayout();
             // 
             // label1
@@ -131,27 +131,27 @@ namespace RobotView
             this.switchView2.Switch = null;
             this.switchView2.TabIndex = 5;
             // 
-            // switchView3
-            // 
-            this.switchView3.Location = new System.Drawing.Point(185, 3);
-            this.switchView3.Name = "switchView3";
-            this.switchView3.Size = new System.Drawing.Size(20, 40);
-            this.switchView3.State = false;
-            this.switchView3.Switch = null;
-            this.switchView3.TabIndex = 6;
-            // 
             // switchView4
             // 
-            this.switchView4.Location = new System.Drawing.Point(159, 3);
+            this.switchView4.Location = new System.Drawing.Point(185, 3);
             this.switchView4.Name = "switchView4";
             this.switchView4.Size = new System.Drawing.Size(20, 40);
             this.switchView4.State = false;
             this.switchView4.Switch = null;
-            this.switchView4.TabIndex = 7;
+            this.switchView4.TabIndex = 6;
+            // 
+            // switchView3
+            // 
+            this.switchView3.Location = new System.Drawing.Point(159, 3);
+            this.switchView3.Name = "switchView3";
+            this.switchView3.Size = new System.Drawing.Size(20, 40);
+            this.switchView3.State = false;
+            this.switchView3.Switch = null;
+            this.switchView3.TabIndex = 7;
             // 
             // ConsoleView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.label4);

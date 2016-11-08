@@ -32,7 +32,6 @@ namespace TestConsole
         {
             this.button1 = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer();
-            this.consoleView2 = new RobotView.ConsoleView();
             this.consoleView1 = new RobotView.ConsoleView();
             this.SuspendLayout();
             // 
@@ -49,15 +48,6 @@ namespace TestConsole
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // consoleView2
-            // 
-            this.consoleView2.BackColor = System.Drawing.Color.Black;
-            this.consoleView2.Location = new System.Drawing.Point(27, 116);
-            this.consoleView2.Name = "consoleView2";
-            this.consoleView2.RobotConsole = null;
-            this.consoleView2.Size = new System.Drawing.Size(208, 46);
-            this.consoleView2.TabIndex = 1;
-            // 
             // consoleView1
             // 
             this.consoleView1.BackColor = System.Drawing.Color.Black;
@@ -73,7 +63,6 @@ namespace TestConsole
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(363, 227);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.consoleView2);
             this.Controls.Add(this.consoleView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -83,8 +72,6 @@ namespace TestConsole
 
         private ConsoleView consoleView1;
         #endregion
-
-        private ConsoleView consoleView2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer;
     }
