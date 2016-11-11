@@ -89,7 +89,7 @@ namespace Testat
             // runLineParameter
             // 
             this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.runLineParameter.Length = 0.1F;
+            this.runLineParameter.Length = 1F;
             this.runLineParameter.Location = new System.Drawing.Point(353, 171);
             this.runLineParameter.Name = "runLineParameter";
             this.runLineParameter.Size = new System.Drawing.Size(429, 62);

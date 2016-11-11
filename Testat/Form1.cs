@@ -33,26 +33,37 @@ namespace Testat
             runLineParameter.RunLineStartPressed += RunLineStartPressed;
             SpeedChanged(null, EventArgs.Empty); // Default Wert setzen
             AccelerationChanged(null, EventArgs.Empty); // Default Wert setzen
+
+            consoleView1.RobotConsole[Switches.Switch1].SwitchStateChanged += SwitchStateChanged;
+            consoleView1.RobotConsole[Switches.Switch2].SwitchStateChanged += SwitchStateChanged;
+            consoleView1.RobotConsole[Switches.Switch3].SwitchStateChanged += SwitchStateChanged;
+            consoleView1.RobotConsole[Switches.Switch4].SwitchStateChanged += SwitchStateChanged;
         }
 
         #endregion
 
         #region methods
+
+        private void SwitchStateChanged(object sender, SwitchEventArgs e)
+        {
+            consoleView1.RobotConsole[(Leds)(int)e.Swi].LedEnabled = e.SwitchEnabled;
+        }
+
         private void SpeedChanged(object sender, EventArgs e)
         {
-            driveView1.Drive.MotorCtrlLeft.Speed = commonRunParameters1.Speed;
-            driveView1.Drive.MotorCtrlRight.Speed = commonRunParameters1.Speed;
+            robot.Drive.MotorCtrlLeft.Speed = commonRunParameters1.Speed;
+            robot.Drive.MotorCtrlRight.Speed = commonRunParameters1.Speed;
         }
 
         private void AccelerationChanged(object sender, EventArgs e)
         {
-            driveView1.Drive.MotorCtrlLeft.Acceleration = commonRunParameters1.Acceleration;
-            driveView1.Drive.MotorCtrlRight.Acceleration = commonRunParameters1.Acceleration;
+            robot.Drive.MotorCtrlLeft.Acceleration = commonRunParameters1.Acceleration;
+            robot.Drive.MotorCtrlRight.Acceleration = commonRunParameters1.Acceleration;
         }
 
         private void RunLineStartPressed(object sender, EventArgs eventArgs)
         {
-            driveView1.Drive.RunLine(runLineParameter.Length, commonRunParameters1.Speed, commonRunParameters1.Acceleration);
+            robot.Drive.RunLine(runLineParameter.Length, commonRunParameters1.Speed, commonRunParameters1.Acceleration);
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
