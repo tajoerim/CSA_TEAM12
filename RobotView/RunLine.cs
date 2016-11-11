@@ -37,10 +37,5 @@ namespace RobotView
         {
             this.upDownLength.Value = this.upDownLength.Value * -1;
         }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
