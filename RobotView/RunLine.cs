@@ -7,7 +7,6 @@ namespace RobotView
 {
     public partial class RunLine : UserControl
     {
-        public event EventHandler<EventArgs> RunLineLengthChagned;
         public event EventHandler<EventArgs> RunLineStartPressed;
 
         public float Length
@@ -20,7 +19,6 @@ namespace RobotView
         {
             InitializeComponent();
             this.btnStart.Click += BtnStartOnClick;
-            this.upDownLength.ValueChanged += UpDownLengthOnValueChanged;
         }
 
         private void BtnStartOnClick(object sender, EventArgs eventArgs)
@@ -28,19 +26,9 @@ namespace RobotView
             RunLineStartPressed?.Invoke(this, eventArgs);
         }
 
-        private void UpDownLengthOnValueChanged(object sender, EventArgs eventArgs)
-        {
-            //RunLineLengthChagned?.Invoke(this, eventArgs);
-        }
-
         private void btnSignChanger_Click(object sender, EventArgs e)
         {
             this.upDownLength.Value = this.upDownLength.Value * -1;
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

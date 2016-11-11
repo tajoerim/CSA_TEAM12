@@ -31,6 +31,7 @@ namespace Testat
             commonRunParameters1.AccelerationChanged += AccelerationChanged;
             commonRunParameters1.SpeedChanged += SpeedChanged;
             runLineParameter.RunLineStartPressed += RunLineStartPressed;
+            runTurnParameter.RunTurnStartPressed += RunTurnStartPressed;
             SpeedChanged(null, EventArgs.Empty); // Default Wert setzen
             AccelerationChanged(null, EventArgs.Empty); // Default Wert setzen
         }
@@ -53,6 +54,11 @@ namespace Testat
         private void RunLineStartPressed(object sender, EventArgs eventArgs)
         {
             driveView1.Drive.RunLine(runLineParameter.Length, commonRunParameters1.Speed, commonRunParameters1.Acceleration);
+        }
+
+        private void RunTurnStartPressed(object sender, EventArgs eventArgs)
+        {
+            driveView1.Drive.RunTurn(runTurnParameter.Angle, commonRunParameters1.Speed, commonRunParameters1.Acceleration);
         }
 
         private void buttonStop_Click(object sender, EventArgs e)

@@ -82,7 +82,7 @@ namespace Testat
             this.commonRunParameters1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.commonRunParameters1.Location = new System.Drawing.Point(353, 25);
             this.commonRunParameters1.Name = "commonRunParameters1";
-            this.commonRunParameters1.Size = new System.Drawing.Size(429, 139);
+            this.commonRunParameters1.Size = new System.Drawing.Size(429, 95);
             this.commonRunParameters1.Speed = 0.5F;
             this.commonRunParameters1.TabIndex = 4;
             // 
@@ -90,16 +90,16 @@ namespace Testat
             // 
             this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
             this.runLineParameter.Length = 0.1F;
-            this.runLineParameter.Location = new System.Drawing.Point(353, 171);
+            this.runLineParameter.Location = new System.Drawing.Point(353, 125);
             this.runLineParameter.Name = "runLineParameter";
             this.runLineParameter.Size = new System.Drawing.Size(429, 62);
             this.runLineParameter.TabIndex = 5;
             // 
             // runTurnParameter
             // 
+            this.runTurnParameter.Angle = 90F;
             this.runTurnParameter.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.runTurnParameter.Length = 0.1F;
-            this.runTurnParameter.Location = new System.Drawing.Point(353, 237);
+            this.runTurnParameter.Location = new System.Drawing.Point(353, 191);
             this.runTurnParameter.Name = "runTurnParameter";
             this.runTurnParameter.Size = new System.Drawing.Size(429, 62);
             this.runTurnParameter.TabIndex = 5;

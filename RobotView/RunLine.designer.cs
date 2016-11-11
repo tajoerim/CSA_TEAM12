@@ -79,7 +79,6 @@ namespace RobotView
             this.btnStart.Size = new System.Drawing.Size(88, 32);
             this.btnStart.TabIndex = 24;
             this.btnStart.Text = "Start";
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnSignChanger
             // 

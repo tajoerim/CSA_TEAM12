@@ -73,7 +73,7 @@ namespace RobotView
         #endregion
 
 
-        #region properties
+        #region properties-
         public float Speed
         {
             get { return (float)upDownSpeed.Value / 1000; }

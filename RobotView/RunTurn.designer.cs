@@ -28,7 +28,7 @@ namespace RobotView
         private void InitializeComponent()
         {
             this.label16 = new System.Windows.Forms.Label();
-            this.upDownLength = new System.Windows.Forms.NumericUpDown();
+            this.upDownAngle = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSignChanger = new System.Windows.Forms.Button();
@@ -42,23 +42,23 @@ namespace RobotView
             this.label16.Size = new System.Drawing.Size(182, 20);
             this.label16.Text = "RunTurn";
             // 
-            // upDownLength
+            // upDownAngle
             // 
-            this.upDownLength.Increment = new decimal(new int[] {
+            this.upDownAngle.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.upDownLength.Location = new System.Drawing.Point(233, 24);
-            this.upDownLength.Maximum = new decimal(new int[] {
+            this.upDownAngle.Location = new System.Drawing.Point(233, 24);
+            this.upDownAngle.Maximum = new decimal(new int[] {
             8000,
             0,
             0,
             0});
-            this.upDownLength.Name = "upDownLength";
-            this.upDownLength.Size = new System.Drawing.Size(85, 24);
-            this.upDownLength.TabIndex = 21;
-            this.upDownLength.Value = new decimal(new int[] {
+            this.upDownAngle.Name = "upDownAngle";
+            this.upDownAngle.Size = new System.Drawing.Size(85, 24);
+            this.upDownAngle.TabIndex = 21;
+            this.upDownAngle.Value = new decimal(new int[] {
             90,
             0,
             0,
@@ -79,7 +79,6 @@ namespace RobotView
             this.btnStart.Size = new System.Drawing.Size(88, 32);
             this.btnStart.TabIndex = 24;
             this.btnStart.Text = "Start";
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnSignChanger
             // 
@@ -97,7 +96,7 @@ namespace RobotView
             this.Controls.Add(this.btnSignChanger);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.upDownLength);
+            this.Controls.Add(this.upDownAngle);
             this.Controls.Add(this.label18);
             this.Name = "RunTurn";
             this.Size = new System.Drawing.Size(421, 62);
@@ -108,7 +107,7 @@ namespace RobotView
         #endregion
 
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown upDownLength;
+        private System.Windows.Forms.NumericUpDown upDownAngle;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnSignChanger;
