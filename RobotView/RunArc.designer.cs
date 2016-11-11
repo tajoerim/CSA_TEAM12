@@ -129,7 +129,7 @@ namespace RobotView
             // upDownAngle
             // 
             this.upDownAngle.Increment = new decimal(new int[] {
-            100,
+            45,
             0,
             0,
             0});

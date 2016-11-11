@@ -46,7 +46,7 @@ namespace RobotView
             // upDownAngle
             // 
             this.upDownAngle.Increment = new decimal(new int[] {
-            100,
+            45,
             0,
             0,
             0});
@@ -56,6 +56,11 @@ namespace RobotView
             0,
             0,
             0});
+            this.upDownAngle.Minimum = new decimal(new int[] {
+            8000,
+            0,
+            0,
+            -2147483648});
             this.upDownAngle.Name = "upDownAngle";
             this.upDownAngle.Size = new System.Drawing.Size(85, 24);
             this.upDownAngle.TabIndex = 21;

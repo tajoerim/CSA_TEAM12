@@ -107,11 +107,14 @@ namespace Testat
             // 
             // runArcParameter
             // 
+            this.runArcParameter.Angle = 1F;
             this.runArcParameter.BackColor = System.Drawing.SystemColors.ControlLight;
             this.runArcParameter.Location = new System.Drawing.Point(353, 261);
             this.runArcParameter.Name = "runArcParameter";
-            this.runArcParameter.Size = new System.Drawing.Size(429, 62);
+            this.runArcParameter.Radius = 1F;
+            this.runArcParameter.Size = new System.Drawing.Size(429, 118);
             this.runArcParameter.TabIndex = 5;
+            this.runArcParameter.TurnLeft = true;
             // 
             // Form1
             // 
