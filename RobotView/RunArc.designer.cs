@@ -46,7 +46,7 @@ namespace RobotView
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(182, 20);
-            this.label16.Text = "RunLine";
+            this.label16.Text = "RunArc";
             // 
             // upDownRadius
             // 

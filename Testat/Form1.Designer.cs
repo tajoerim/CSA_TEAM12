@@ -36,11 +36,13 @@ namespace Testat
         {
             this.buttonHalt = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.timerRadar = new System.Windows.Forms.Timer();
+            this.progressSensor = new System.Windows.Forms.ProgressBar();
             this.driveView1 = new RobotView.DriveView();
             this.consoleView1 = new RobotView.ConsoleView();
             this.commonRunParameters1 = new RobotView.CommonRunParameters();
-            this.runLineParameter = new RobotView.RunLine();
             this.runTurnParameter = new RobotView.RunTurn();
+            this.runLineParameter = new RobotView.RunLine();
             this.runArcParameter = new RobotView.RunArc();
             this.SuspendLayout();
             // 
@@ -59,6 +61,18 @@ namespace Testat
             this.buttonStop.Size = new System.Drawing.Size(70, 40);
             this.buttonStop.TabIndex = 3;
             this.buttonStop.Text = "Stop";
+            // 
+            // timerRadar
+            // 
+            this.timerRadar.Enabled = true;
+            this.timerRadar.Tick += new System.EventHandler(this.timerRadar_Tick);
+            // 
+            // progressSensor
+            // 
+            this.progressSensor.Location = new System.Drawing.Point(15, 323);
+            this.progressSensor.Maximum = 300;
+            this.progressSensor.Name = "progressSensor";
+            this.progressSensor.Size = new System.Drawing.Size(306, 20);
             // 
             // driveView1
             // 
@@ -87,15 +101,6 @@ namespace Testat
             this.commonRunParameters1.Speed = 0.5F;
             this.commonRunParameters1.TabIndex = 4;
             // 
-            // runLineParameter
-            // 
-            this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.runLineParameter.Length = 0.1F;
-            this.runLineParameter.Location = new System.Drawing.Point(353, 125);
-            this.runLineParameter.Name = "runLineParameter";
-            this.runLineParameter.Size = new System.Drawing.Size(429, 62);
-            this.runLineParameter.TabIndex = 5;
-            // 
             // runTurnParameter
             // 
             this.runTurnParameter.Angle = 90F;
@@ -104,6 +109,15 @@ namespace Testat
             this.runTurnParameter.Name = "runTurnParameter";
             this.runTurnParameter.Size = new System.Drawing.Size(429, 62);
             this.runTurnParameter.TabIndex = 5;
+            // 
+            // runLineParameter
+            // 
+            this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runLineParameter.Length = 0.1F;
+            this.runLineParameter.Location = new System.Drawing.Point(353, 125);
+            this.runLineParameter.Name = "runLineParameter";
+            this.runLineParameter.Size = new System.Drawing.Size(429, 62);
+            this.runLineParameter.TabIndex = 5;
             // 
             // runArcParameter
             // 
@@ -122,6 +136,7 @@ namespace Testat
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(802, 461);
+            this.Controls.Add(this.progressSensor);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonHalt);
             this.Controls.Add(this.driveView1);
@@ -146,6 +161,8 @@ namespace Testat
         private System.Windows.Forms.Button buttonStop;
         private RunTurn runTurnParameter;
         private RunArc runArcParameter;
+        private System.Windows.Forms.Timer timerRadar;
+        private System.Windows.Forms.ProgressBar progressSensor;
     }
 }
 
