@@ -5,9 +5,6 @@
 //    $Id: MotorCtrl.cs 973 2015-11-10 13:12:03Z zajost $
 //------------------------------------------------------------------------------
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace RobotCtrl
@@ -156,10 +153,7 @@ namespace RobotCtrl
         /// Liefert den gefahrenden Weg [m].
         /// Dieser wird aus der Anzahl Ticks berechnet.
         /// </summary>
-        public virtual float Distance
-        {
-            get { throw new NotImplementedException("ToDo"); }
-        }
+        public virtual float Distance => Ticks * Constants.MeterPerTick;
 
 
         /// <summary>

@@ -5,9 +5,6 @@
 //    $Id: MotorCtrl.cs 973 2015-11-10 13:12:03Z zajost $
 //------------------------------------------------------------------------------
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace RobotCtrl
@@ -17,14 +14,14 @@ namespace RobotCtrl
     {
 
         #region members
-        private int ioAddress;
+        private readonly int ioAddress;
         #endregion
 
 
         #region constructor & destructor
-        public DriveCtrl(int IOAddress)
+        public DriveCtrl(int ioAddress)
         {
-            this.ioAddress = IOAddress;
+            this.ioAddress = ioAddress;
             Reset();
         }
 
@@ -41,7 +38,7 @@ namespace RobotCtrl
         /// </summary>
         public bool Power
         {
-            set { DriveState = (value) ? DriveState | 0x03 : DriveState & ~0x03; }
+            set { this.DriveState = value ? this.DriveState | 0x03 : this.DriveState & ~0x03; }
         }
 
 
@@ -51,8 +48,8 @@ namespace RobotCtrl
         /// </summary>
         public bool PowerRight
         {
-            get { return false; } // ToDo
-            set { } // ToDo
+            get { return (this.DriveState & 0x01) != 0; }
+            set { this.DriveState = value ? this.DriveState | 0x01 : this.DriveState & ~0x01; }
         }
 
 
@@ -61,8 +58,8 @@ namespace RobotCtrl
         /// </summary>
         public bool PowerLeft
         {
-            get { return false; } // ToDo
-            set { } // ToDo
+            get { return (this.DriveState & 0x02) != 0;  }
+            set { this.DriveState = value ? this.DriveState | 0x02 : this.DriveState & ~0x02; }
         }
 
 
@@ -71,8 +68,8 @@ namespace RobotCtrl
         /// </summary>
         public int DriveState
         {
-            get { return 0; } // ToDo
-            set { } // ToDo
+            get { return IOPort.Read(ioAddress); }
+            private set { IOPort.Write(ioAddress, value); }
         }
         #endregion
 
@@ -84,7 +81,12 @@ namespace RobotCtrl
         /// </summary>
         public void Reset()
         {
-            // ToDo
+            DriveState = 0;
+            Thread.Sleep(5);
+            DriveState = 0x80;
+            Thread.Sleep(5);
+            DriveState = 0;
+            Thread.Sleep(5);
         }
         #endregion
 
