@@ -55,6 +55,11 @@ namespace RobotView
             0,
             0,
             0});
+            this.upDownLength.Minimum = new decimal(new int[] {
+            8000,
+            0,
+            0,
+            -2147483648});
             this.upDownLength.Name = "upDownLength";
             this.upDownLength.Size = new System.Drawing.Size(85, 32);
             this.upDownLength.TabIndex = 21;
