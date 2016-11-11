@@ -84,8 +84,8 @@ namespace TestDrive
             // 
             // runLineParameter
             // 
-            this.runLineParameter.Length = 0.1F;
             this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runLineParameter.Length = 0.1F;
             this.runLineParameter.Location = new System.Drawing.Point(350, 149);
             this.runLineParameter.Name = "runLineParameter";
             this.runLineParameter.Size = new System.Drawing.Size(576, 62);
@@ -96,7 +96,7 @@ namespace TestDrive
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(991, 435);
+            this.ClientSize = new System.Drawing.Size(938, 435);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonHalt);
             this.Controls.Add(this.driveView1);

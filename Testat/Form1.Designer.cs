@@ -1,4 +1,6 @@
 ﻿
+using RobotView;
+
 namespace Testat
 {
     partial class Form1
@@ -7,7 +9,6 @@ namespace Testat
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.MainMenu mainMenu1;
 
         private RobotView.DriveView driveView;
         private RobotView.CommonRunParameters commonRunParameters;
@@ -33,47 +34,104 @@ namespace Testat
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.driveView = new RobotView.DriveView();
-            this.commonRunParameters = new RobotView.CommonRunParameters();
+            this.buttonHalt = new System.Windows.Forms.Button();
+            this.buttonStop = new System.Windows.Forms.Button();
+            this.driveView1 = new RobotView.DriveView();
+            this.consoleView1 = new RobotView.ConsoleView();
+            this.commonRunParameters1 = new RobotView.CommonRunParameters();
+            this.runLineParameter = new RobotView.RunLine();
+            this.runTurnParameter = new RobotView.RunTurn();
             this.SuspendLayout();
             // 
-            // driveView
+            // buttonHalt
             // 
-            this.driveView.Drive = null;
-            this.driveView.Location = new System.Drawing.Point(0, 0);
-            this.driveView.Name = "driveView";
-            this.driveView.Size = new System.Drawing.Size(313, 306);
-            this.driveView.TabIndex = 0;
+            this.buttonHalt.Location = new System.Drawing.Point(251, 357);
+            this.buttonHalt.Name = "buttonHalt";
+            this.buttonHalt.Size = new System.Drawing.Size(70, 40);
+            this.buttonHalt.TabIndex = 0;
+            this.buttonHalt.Text = "Halt";
             // 
-            // commonRunParameters
+            // buttonStop
             // 
-            this.commonRunParameters.Acceleration = 0.3F;
-            this.commonRunParameters.Location = new System.Drawing.Point(386, 3);
-            this.commonRunParameters.Name = "commonRunParameters";
-            this.commonRunParameters.Size = new System.Drawing.Size(385, 84);
-            this.commonRunParameters.Speed = 0.5F;
-            this.commonRunParameters.TabIndex = 0;
+            this.buttonStop.Location = new System.Drawing.Point(251, 403);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(70, 40);
+            this.buttonStop.TabIndex = 3;
+            this.buttonStop.Text = "Stop";
+            // 
+            // driveView1
+            // 
+            this.driveView1.Drive = null;
+            this.driveView1.Location = new System.Drawing.Point(3, 28);
+            this.driveView1.Name = "driveView1";
+            this.driveView1.Size = new System.Drawing.Size(292, 315);
+            this.driveView1.TabIndex = 1;
+            // 
+            // consoleView1
+            // 
+            this.consoleView1.BackColor = System.Drawing.Color.Black;
+            this.consoleView1.Location = new System.Drawing.Point(15, 369);
+            this.consoleView1.Name = "consoleView1";
+            this.consoleView1.RobotConsole = null;
+            this.consoleView1.Size = new System.Drawing.Size(209, 46);
+            this.consoleView1.TabIndex = 2;
+            // 
+            // commonRunParameters1
+            // 
+            this.commonRunParameters1.Acceleration = 0.3F;
+            this.commonRunParameters1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.commonRunParameters1.Location = new System.Drawing.Point(353, 25);
+            this.commonRunParameters1.Name = "commonRunParameters1";
+            this.commonRunParameters1.Size = new System.Drawing.Size(429, 139);
+            this.commonRunParameters1.Speed = 0.5F;
+            this.commonRunParameters1.TabIndex = 4;
+            // 
+            // runLineParameter
+            // 
+            this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runLineParameter.Length = 0.1F;
+            this.runLineParameter.Location = new System.Drawing.Point(353, 171);
+            this.runLineParameter.Name = "runLineParameter";
+            this.runLineParameter.Size = new System.Drawing.Size(429, 62);
+            this.runLineParameter.TabIndex = 5;
+            // 
+            // runTurnParameter
+            // 
+            this.runTurnParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runTurnParameter.Length = 0.1F;
+            this.runTurnParameter.Location = new System.Drawing.Point(353, 237);
+            this.runTurnParameter.Name = "runTurnParameter";
+            this.runTurnParameter.Size = new System.Drawing.Size(429, 62);
+            this.runTurnParameter.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(775, 488);
-            this.Controls.Add(this.driveView);
-            this.Controls.Add(this.commonRunParameters);
-            this.Menu = this.mainMenu1;
+            this.ClientSize = new System.Drawing.Size(802, 461);
+            this.Controls.Add(this.buttonStop);
+            this.Controls.Add(this.buttonHalt);
+            this.Controls.Add(this.driveView1);
+            this.Controls.Add(this.consoleView1);
+            this.Controls.Add(this.commonRunParameters1);
+            this.Controls.Add(this.runTurnParameter);
+            this.Controls.Add(this.runLineParameter);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonHalt;
+        private DriveView driveView1;
+        private ConsoleView consoleView1;
+        private CommonRunParameters commonRunParameters1;
+        private RunLine runLineParameter;
+        private System.Windows.Forms.Button buttonStop;
+        private RunTurn runTurnParameter;
     }
 }
 
