@@ -60,7 +60,7 @@ namespace Testat
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(912, 488);
+            this.ClientSize = new System.Drawing.Size(775, 488);
             this.Controls.Add(this.driveView);
             this.Controls.Add(this.commonRunParameters);
             this.Menu = this.mainMenu1;

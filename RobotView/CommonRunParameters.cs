@@ -106,7 +106,7 @@ namespace RobotView
             NumericKeyboard nk = new NumericKeyboard();
             if (nk.ShowDialog() == DialogResult.OK)
             {
-                // Dialog wurde mit OK beendet => Werte übernehmen
+                this.upDownSpeed.Value = nk.GetValue();
             }
         }
 
@@ -115,7 +115,7 @@ namespace RobotView
             NumericKeyboard nk = new NumericKeyboard();
             if (nk.ShowDialog() == DialogResult.OK)
             {
-                // Dialog wurde mit OK beendet => Werte übernehmen
+                this.upDownAcceleration.Value = nk.GetValue();
             }
         }
         #endregion
