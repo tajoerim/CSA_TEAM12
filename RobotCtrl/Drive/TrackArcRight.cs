@@ -59,22 +59,6 @@ namespace RobotCtrl
         public float Radius { get; protected set; }
         #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         #region methods
         /// <summary>
         /// Berechnet die Geschwindigkeit der beiden Räder, damit der 

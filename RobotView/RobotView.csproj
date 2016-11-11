@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RunLine.cs">
+      <SubType>usercontrol</SubType>
+    </Compile>
+    <Compile Include="RunLine.designer.cs">
+      <DependentUpon>RunLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonRunParameters.cs">
       <SubType>usercontrol</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RunLine.resx">
+      <DependentUpon>RunLine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommonRunParameters.resx">
       <DependentUpon>CommonRunParameters.cs</DependentUpon>
     </EmbeddedResource>

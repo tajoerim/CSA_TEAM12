@@ -32,20 +32,30 @@ namespace TestDrive
 
             commonRunParameters1.AccelerationChanged += AccelerationChanged;
             commonRunParameters1.SpeedChanged += SpeedChanged;
-
+            runLineParameter.RunLineStartPressed += RunLineStartPressed;
             SpeedChanged(null, EventArgs.Empty); // Default Wert setzen
             AccelerationChanged(null, EventArgs.Empty); // Default Wert setzen
         }
+
         #endregion
         
         #region methods
         private void SpeedChanged(object sender, EventArgs e)
         {
-        }
-        private void AccelerationChanged(object sender, EventArgs e)
-        {
+            driveView1.Drive.MotorCtrlLeft.Speed = commonRunParameters1.Speed;
+            driveView1.Drive.MotorCtrlRight.Speed = commonRunParameters1.Speed;
         }
 
+        private void AccelerationChanged(object sender, EventArgs e)
+        {
+            driveView1.Drive.MotorCtrlLeft.Acceleration = commonRunParameters1.Acceleration;
+            driveView1.Drive.MotorCtrlRight.Acceleration = commonRunParameters1.Acceleration;
+        }
+
+        private void RunLineStartPressed(object sender, EventArgs eventArgs)
+        {
+            driveView1.Drive.RunLine(runLineParameter.Length, commonRunParameters1.Speed, commonRunParameters1.Acceleration);
+        }
 
         private void buttonStop_Click(object sender, EventArgs e)
         {
