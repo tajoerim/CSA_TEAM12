@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RunArc.cs">
+      <SubType>usercontrol</SubType>
+    </Compile>
+    <Compile Include="RunArc.designer.cs">
+      <DependentUpon>RunArc.cs</DependentUpon>
+    </Compile>
     <Compile Include="RunTurn.cs">
       <SubType>usercontrol</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RunArc.resx">
+      <DependentUpon>RunArc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RunTurn.resx">
       <DependentUpon>RunTurn.cs</DependentUpon>
     </EmbeddedResource>
