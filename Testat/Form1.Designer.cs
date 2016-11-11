@@ -41,6 +41,7 @@ namespace Testat
             this.commonRunParameters1 = new RobotView.CommonRunParameters();
             this.runLineParameter = new RobotView.RunLine();
             this.runTurnParameter = new RobotView.RunTurn();
+            this.runArcParameter = new RobotView.RunArc();
             this.SuspendLayout();
             // 
             // buttonHalt
@@ -82,7 +83,7 @@ namespace Testat
             this.commonRunParameters1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.commonRunParameters1.Location = new System.Drawing.Point(353, 25);
             this.commonRunParameters1.Name = "commonRunParameters1";
-            this.commonRunParameters1.Size = new System.Drawing.Size(429, 139);
+            this.commonRunParameters1.Size = new System.Drawing.Size(429, 95);
             this.commonRunParameters1.Speed = 0.5F;
             this.commonRunParameters1.TabIndex = 4;
             // 
@@ -97,12 +98,23 @@ namespace Testat
             // 
             // runTurnParameter
             // 
+            this.runTurnParameter.Angle = 90F;
             this.runTurnParameter.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.runTurnParameter.Length = 0.1F;
-            this.runTurnParameter.Location = new System.Drawing.Point(353, 237);
+            this.runTurnParameter.Location = new System.Drawing.Point(353, 193);
             this.runTurnParameter.Name = "runTurnParameter";
             this.runTurnParameter.Size = new System.Drawing.Size(429, 62);
             this.runTurnParameter.TabIndex = 5;
+            // 
+            // runArcParameter
+            // 
+            this.runArcParameter.Angle = 1F;
+            this.runArcParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runArcParameter.Location = new System.Drawing.Point(353, 261);
+            this.runArcParameter.Name = "runArcParameter";
+            this.runArcParameter.Radius = 1F;
+            this.runArcParameter.Size = new System.Drawing.Size(429, 118);
+            this.runArcParameter.TabIndex = 5;
+            this.runArcParameter.TurnLeft = true;
             // 
             // Form1
             // 
@@ -117,6 +129,7 @@ namespace Testat
             this.Controls.Add(this.commonRunParameters1);
             this.Controls.Add(this.runTurnParameter);
             this.Controls.Add(this.runLineParameter);
+            this.Controls.Add(this.runArcParameter);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -132,6 +145,7 @@ namespace Testat
         private RunLine runLineParameter;
         private System.Windows.Forms.Button buttonStop;
         private RunTurn runTurnParameter;
+        private RunArc runArcParameter;
     }
 }
 
