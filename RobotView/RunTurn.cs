@@ -30,5 +30,14 @@ namespace RobotView
         {
             this.upDownAngle.Value = this.upDownAngle.Value * -1;
         }
+
+        private void btnKeyboard_Click(object sender, EventArgs e)
+        {
+            NumericKeyboard nk = new NumericKeyboard();
+            if (nk.ShowDialog() == DialogResult.OK)
+            {
+                this.upDownAngle.Value = nk.GetValue();
+            }
+        }
     }
 }

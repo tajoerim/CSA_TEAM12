@@ -32,6 +32,7 @@ namespace RobotView
             this.label18 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSignChanger = new System.Windows.Forms.Button();
+            this.btnKeyboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label16
@@ -49,7 +50,7 @@ namespace RobotView
             0,
             0,
             0});
-            this.upDownAngle.Location = new System.Drawing.Point(233, 24);
+            this.upDownAngle.Location = new System.Drawing.Point(181, 25);
             this.upDownAngle.Maximum = new decimal(new int[] {
             8000,
             0,
@@ -74,25 +75,35 @@ namespace RobotView
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(330, 20);
+            this.btnStart.Location = new System.Drawing.Point(347, 20);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(88, 32);
+            this.btnStart.Size = new System.Drawing.Size(71, 32);
             this.btnStart.TabIndex = 24;
             this.btnStart.Text = "Start";
             // 
             // btnSignChanger
             // 
-            this.btnSignChanger.Location = new System.Drawing.Point(181, 20);
+            this.btnSignChanger.Location = new System.Drawing.Point(136, 20);
             this.btnSignChanger.Name = "btnSignChanger";
             this.btnSignChanger.Size = new System.Drawing.Size(39, 32);
             this.btnSignChanger.TabIndex = 29;
             this.btnSignChanger.Text = "+/-";
             this.btnSignChanger.Click += new System.EventHandler(this.btnSignChanger_Click);
             // 
+            // btnKeyboard
+            // 
+            this.btnKeyboard.Location = new System.Drawing.Point(272, 20);
+            this.btnKeyboard.Name = "btnKeyboard";
+            this.btnKeyboard.Size = new System.Drawing.Size(69, 32);
+            this.btnKeyboard.TabIndex = 32;
+            this.btnKeyboard.Text = "...";
+            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            // 
             // RunTurn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.btnKeyboard);
             this.Controls.Add(this.btnSignChanger);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label16);
@@ -111,5 +122,6 @@ namespace RobotView
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnSignChanger;
+        private System.Windows.Forms.Button btnKeyboard;
     }
 }
