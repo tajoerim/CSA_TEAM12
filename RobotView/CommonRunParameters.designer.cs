@@ -32,8 +32,8 @@ namespace RobotView
             this.upDownSpeed = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnNkSpeed = new System.Windows.Forms.Button();
-            this.btnNkAcceleration = new System.Windows.Forms.Button();
+            this.btnSpeedNumericKeyboard = new System.Windows.Forms.Button();
+            this.btnAccelarionKeyboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label16
@@ -58,7 +58,7 @@ namespace RobotView
             0,
             0});
             this.upDownAcceleration.Name = "upDownAcceleration";
-            this.upDownAcceleration.Size = new System.Drawing.Size(75, 24);
+            this.upDownAcceleration.Size = new System.Drawing.Size(75, 32);
             this.upDownAcceleration.TabIndex = 20;
             this.upDownAcceleration.Value = new decimal(new int[] {
             300,
@@ -80,7 +80,7 @@ namespace RobotView
             0,
             0});
             this.upDownSpeed.Name = "upDownSpeed";
-            this.upDownSpeed.Size = new System.Drawing.Size(75, 24);
+            this.upDownSpeed.Size = new System.Drawing.Size(75, 32);
             this.upDownSpeed.TabIndex = 21;
             this.upDownSpeed.Value = new decimal(new int[] {
             500,
@@ -104,37 +104,37 @@ namespace RobotView
             this.label18.Size = new System.Drawing.Size(172, 20);
             this.label18.Text = "Speed (+ mm/s)";
             // 
-            // btnNkSpeed
+            // btnSpeedNumericKeyboard
             // 
-            this.btnNkSpeed.Location = new System.Drawing.Point(296, 24);
-            this.btnNkSpeed.Name = "btnNkSpeed";
-            this.btnNkSpeed.Size = new System.Drawing.Size(72, 20);
-            this.btnNkSpeed.TabIndex = 24;
-            this.btnNkSpeed.Text = "...";
-            this.btnNkSpeed.Click += new System.EventHandler(this.btnNkSpeed_Click);
+            this.btnSpeedNumericKeyboard.Location = new System.Drawing.Point(305, 24);
+            this.btnSpeedNumericKeyboard.Name = "btnSpeedNumericKeyboard";
+            this.btnSpeedNumericKeyboard.Size = new System.Drawing.Size(39, 20);
+            this.btnSpeedNumericKeyboard.TabIndex = 24;
+            this.btnSpeedNumericKeyboard.Text = "...";
+            this.btnSpeedNumericKeyboard.Click += new System.EventHandler(this.btnSpeedNumericKeyboard_Click);
             // 
-            // btnNkAcceleration
+            // btnAccelarionKeyboard
             // 
-            this.btnNkAcceleration.Location = new System.Drawing.Point(296, 54);
-            this.btnNkAcceleration.Name = "btnNkAcceleration";
-            this.btnNkAcceleration.Size = new System.Drawing.Size(72, 20);
-            this.btnNkAcceleration.TabIndex = 25;
-            this.btnNkAcceleration.Text = "...";
-            this.btnNkAcceleration.Click += new System.EventHandler(this.btnNkAcceleration_Click);
+            this.btnAccelarionKeyboard.Location = new System.Drawing.Point(305, 54);
+            this.btnAccelarionKeyboard.Name = "btnAccelarionKeyboard";
+            this.btnAccelarionKeyboard.Size = new System.Drawing.Size(39, 20);
+            this.btnAccelarionKeyboard.TabIndex = 25;
+            this.btnAccelarionKeyboard.Text = "...";
+            this.btnAccelarionKeyboard.Click += new System.EventHandler(this.btnAccelarionKeyboard_Click);
             // 
             // CommonRunParameters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.btnNkAcceleration);
-            this.Controls.Add(this.btnNkSpeed);
+            this.Controls.Add(this.btnAccelarionKeyboard);
+            this.Controls.Add(this.btnSpeedNumericKeyboard);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.upDownAcceleration);
             this.Controls.Add(this.upDownSpeed);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Name = "CommonRunParameters";
-            this.Size = new System.Drawing.Size(371, 84);
+            this.Size = new System.Drawing.Size(347, 84);
             this.ResumeLayout(false);
 
         }
@@ -146,7 +146,7 @@ namespace RobotView
         private System.Windows.Forms.NumericUpDown upDownSpeed;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button btnNkSpeed;
-        private System.Windows.Forms.Button btnNkAcceleration;
+        private System.Windows.Forms.Button btnSpeedNumericKeyboard;
+        private System.Windows.Forms.Button btnAccelarionKeyboard;
     }
 }

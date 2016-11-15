@@ -2,9 +2,12 @@
 // C #   I N   A C T I O N   ( C S A )
 //------------------------------------------------------------------------------
 // Repository:
-//    $Id: MotorCtrl.cs 973 2015-11-10 13:12:03Z zajost $
+//    $Id: DriveCtrl.cs 1039 2016-10-25 11:56:45Z chj-hslu $
 //------------------------------------------------------------------------------
 using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 
 namespace RobotCtrl
@@ -14,14 +17,14 @@ namespace RobotCtrl
     {
 
         #region members
-        private readonly int ioAddress;
+        private int ioAddress;
         #endregion
 
 
         #region constructor & destructor
-        public DriveCtrl(int ioAddress)
+        public DriveCtrl(int IOAddress)
         {
-            this.ioAddress = ioAddress;
+            this.ioAddress = IOAddress;
             Reset();
         }
 
@@ -38,18 +41,17 @@ namespace RobotCtrl
         /// </summary>
         public bool Power
         {
-            set { this.DriveState = value ? this.DriveState | 0x03 : this.DriveState & ~0x03; }
+            set { DriveState = (value) ? DriveState | 0x03 : DriveState & ~0x03; }
         }
 
 
         /// <summary>
         /// Liefert den Status ob der rechte Motor ein-/ausgeschaltet ist bzw. schaltet den rechten Motor ein-/aus.
-        /// Die Information dazu steht im Bit0 von DriveState.
         /// </summary>
         public bool PowerRight
         {
-            get { return (this.DriveState & 0x01) != 0; }
-            set { this.DriveState = value ? this.DriveState | 0x01 : this.DriveState & ~0x01; }
+            get { return (DriveState & 0x01) != 0; }
+            set { DriveState = (value) ? DriveState | 0x01 : DriveState & ~0x01; }
         }
 
 
@@ -58,8 +60,8 @@ namespace RobotCtrl
         /// </summary>
         public bool PowerLeft
         {
-            get { return (this.DriveState & 0x02) != 0;  }
-            set { this.DriveState = value ? this.DriveState | 0x02 : this.DriveState & ~0x02; }
+            get { return (DriveState & 0x02) != 0; }
+            set { DriveState = (value) ? DriveState | 0x02 : DriveState & ~0x02; }
         }
 
 
@@ -69,7 +71,7 @@ namespace RobotCtrl
         public int DriveState
         {
             get { return IOPort.Read(ioAddress); }
-            private set { IOPort.Write(ioAddress, value); }
+            protected set { IOPort.Write(ioAddress, value); }
         }
         #endregion
 

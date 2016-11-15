@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using RobotView;
 
 namespace TestDrive
 {
@@ -17,8 +18,8 @@ namespace TestDrive
         #region members
         private Robot robot;
         #endregion
-        
         #region constructor & destructor
+
         public Form1()
         {
             InitializeComponent();
@@ -27,35 +28,53 @@ namespace TestDrive
             robot.Drive.Power = true;   // Stromversorgung der Motoren (im DriveCtrl) einschalten
 
             driveView1.Drive = robot.Drive; // DriveView benötigt Drive-Objekt zur Visualisierung
-            //radarView1.Radar = robot.Radar;
+            runLine1.Drive = robot.Drive; // RunLine benötigt Drive zum Aufruf von Drive.RunLine(...)
+            runTurn1.Drive = robot.Drive;
+            runArc1.Drive = robot.Drive;
+            radarView1.Radar = robot.Radar;
+            
             consoleView1.RobotConsole = robot.RobotConsole;
 
+            radarView1.DistanceChanged += RadarView1OnDistanceChanged;
             commonRunParameters1.AccelerationChanged += AccelerationChanged;
             commonRunParameters1.SpeedChanged += SpeedChanged;
-            runLineParameter.RunLineStartPressed += RunLineStartPressed;
+
             SpeedChanged(null, EventArgs.Empty); // Default Wert setzen
             AccelerationChanged(null, EventArgs.Empty); // Default Wert setzen
+
+            // Events der Konsolenschalter registrieren
+            robot.RobotConsole[Switches.Switch1].SwitchStateChanged += SwitchStateChanged;
+            robot.RobotConsole[Switches.Switch2].SwitchStateChanged += SwitchStateChanged;
+            robot.RobotConsole[Switches.Switch3].SwitchStateChanged += SwitchStateChanged;
+            robot.RobotConsole[Switches.Switch4].SwitchStateChanged += SwitchStateChanged;
+            Thread t = new Thread(Run);
+            t.IsBackground = true;
+            t.Start();
+        }
+
+        private void RadarView1OnDistanceChanged(object sender, DistanceEventArgs distanceEventArgs)
+        {
+            if (robot.Radar.Distance < 0.1f)
+            {
+                robot.Drive.Stop();
+            }
         }
 
         #endregion
-        
         #region methods
         private void SpeedChanged(object sender, EventArgs e)
         {
-            driveView1.Drive.MotorCtrlLeft.Speed = commonRunParameters1.Speed;
-            driveView1.Drive.MotorCtrlRight.Speed = commonRunParameters1.Speed;
+            runLine1.Speed = commonRunParameters1.Speed;
+            runTurn1.Speed = commonRunParameters1.Speed;
+            runArc1.Speed = commonRunParameters1.Speed;
         }
-
         private void AccelerationChanged(object sender, EventArgs e)
         {
-            driveView1.Drive.MotorCtrlLeft.Acceleration = commonRunParameters1.Acceleration;
-            driveView1.Drive.MotorCtrlRight.Acceleration = commonRunParameters1.Acceleration;
+            runLine1.Acceleration = commonRunParameters1.Acceleration;
+            runTurn1.Acceleration = commonRunParameters1.Acceleration;
+            runArc1.Acceleration = commonRunParameters1.Acceleration;
         }
 
-        private void RunLineStartPressed(object sender, EventArgs eventArgs)
-        {
-            driveView1.Drive.RunLine(runLineParameter.Length, commonRunParameters1.Speed, commonRunParameters1.Acceleration);
-        }
 
         private void buttonStop_Click(object sender, EventArgs e)
         {
@@ -66,7 +85,66 @@ namespace TestDrive
         {
             robot.Drive.Halt();
         }
+
+        void SwitchStateChanged(object sender, SwitchEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler<SwitchEventArgs>(SwitchStateChanged), sender, e);
+            }
+            else
+            {
+                switch (e.Swi)
+                {
+                    case Switches.Switch1:
+                        runLine1.Start();
+                        break;
+
+                    case Switches.Switch2:
+                        runTurn1.Start();
+                        break;
+
+                    case Switches.Switch3:
+                        runArc1.Start();
+                        break;
+
+                    case Switches.Switch4:
+                        Exit();
+                        break;
+                }
+            }
+        }
+
+        private void Exit()
+        {
+            try
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = @"\CompactFlash\FtpRoot\x86\CMAccept.exe";
+                p.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            robot.RobotConsole[Leds.Led1].LedEnabled = true;
+            robot.RobotConsole[Leds.Led2].LedEnabled = true;
+            robot.RobotConsole[Leds.Led3].LedEnabled = true;
+            robot.RobotConsole[Leds.Led4].LedEnabled = true;
+            //robot.Dispose();
+            System.Windows.Forms.Application.Exit();
+        }
         #endregion
 
+
+        private void Run()
+        {
+            while (true)
+            {
+                Thread.Sleep(500);
+                //Debug.WriteLine("Test");
+                //Console.WriteLine("Hallo");
+            }
+        }
     }
 }

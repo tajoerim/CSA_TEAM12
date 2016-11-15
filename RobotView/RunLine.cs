@@ -1,42 +1,63 @@
-#define VARIANTE2
-
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Text;
 using System.Windows.Forms;
+using RobotCtrl;
 
 namespace RobotView
 {
     public partial class RunLine : UserControl
     {
-        public event EventHandler<EventArgs> RunLineStartPressed;
-
-        public float Length
-        {
-            get { return (float)upDownLength.Value / 1000; }
-            set { upDownLength.Value = (decimal)value * 1000; }
-        }
-
+        #region constructor & destructor
         public RunLine()
         {
             InitializeComponent();
-            this.btnStart.Click += BtnStartOnClick;
+        }
+        #endregion
+
+
+        #region properties
+        public float Speed { get; set; }
+        public float Acceleration { get; set; }
+        public Drive Drive { get; set; }
+        #endregion
+
+
+        #region methods
+        private void buttonLineNeg_Click(object sender, EventArgs e)
+        {
+            upDownLineLength.Value = -upDownLineLength.Value;
         }
 
-        private void BtnStartOnClick(object sender, EventArgs eventArgs)
+        private void buttonLineStart_Click(object sender, EventArgs e)
         {
-            RunLineStartPressed?.Invoke(this, eventArgs);
+            if (Drive != null) {
+                Drive.RunLine(
+                (float)upDownLineLength.Value / 1000,
+                Speed, Acceleration);}
         }
 
-        private void btnSignChanger_Click(object sender, EventArgs e)
+        public void Start()
         {
-            this.upDownLength.Value = this.upDownLength.Value * -1;
+            buttonLineStart_Click(null, EventArgs.Empty);
         }
 
-        private void btnKeyboard_Click(object sender, EventArgs e)
+        public float Length
         {
-            NumericKeyboard nk = new NumericKeyboard();
+            get { return (float)(upDownLineLength.Value / 1000); }
+            set { upDownLineLength.Value = (decimal)(value * 1000); }
+        }
+        #endregion
+
+        private void btnNumericKeybord_Click(object sender, EventArgs e)
+        {
+            var nk = new NumericKeyboard();
             if (nk.ShowDialog() == DialogResult.OK)
             {
-                this.upDownLength.Value = nk.GetValue();
+                this.upDownLineLength.Value = nk.GetValue();
             }
         }
     }

@@ -50,11 +50,12 @@ namespace RobotView
             // timer
             // 
             this.timer.Enabled = true;
+            this.timer.Interval = 50;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // RadarView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);

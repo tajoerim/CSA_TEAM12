@@ -2,9 +2,12 @@
 // C #   I N   A C T I O N   ( C S A )
 //------------------------------------------------------------------------------
 // Repository:
-//    $Id: MotorCtrl.cs 973 2015-11-10 13:12:03Z zajost $
+//    $Id: MotorCtrl.cs 1039 2016-10-25 11:56:45Z chj-hslu $
 //------------------------------------------------------------------------------
 using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 
 namespace RobotCtrl
@@ -125,7 +128,7 @@ namespace RobotCtrl
         {
             get
             {
-                lock (syncObj)
+                lock (syncObj) // TODO_joc, hinzugefügt
                 {
                     return IOPort.Read(ioAddress);
                 }
@@ -150,10 +153,12 @@ namespace RobotCtrl
 
 
         /// <summary>
-        /// Liefert den gefahrenden Weg [m].
-        /// Dieser wird aus der Anzahl Ticks berechnet.
+        /// Liefert den gefahrenen Weg [m].
         /// </summary>
-        public virtual float Distance => Ticks * Constants.MeterPerTick;
+        public virtual float Distance
+        {
+            get { return (Ticks * Constants.MeterPerTick); }
+        }
 
 
         /// <summary>

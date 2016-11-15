@@ -73,7 +73,7 @@ namespace RobotView
         #endregion
 
 
-        #region properties-
+        #region properties
         public float Speed
         {
             get { return (float)upDownSpeed.Value / 1000; }
@@ -101,23 +101,24 @@ namespace RobotView
             remove { upDownAcceleration.ValueChanged -= value; }
         }
 
-        private void btnNkSpeed_Click(object sender, EventArgs e)
+        private void btnAccelarionKeyboard_Click(object sender, EventArgs e)
         {
-            NumericKeyboard nk = new NumericKeyboard();
-            if (nk.ShowDialog() == DialogResult.OK)
-            {
-                this.upDownSpeed.Value = nk.GetValue();
-            }
-        }
-
-        private void btnNkAcceleration_Click(object sender, EventArgs e)
-        {
-            NumericKeyboard nk = new NumericKeyboard();
+            var nk = new NumericKeyboard();
             if (nk.ShowDialog() == DialogResult.OK)
             {
                 this.upDownAcceleration.Value = nk.GetValue();
-            }
+            }
         }
+
+        private void btnSpeedNumericKeyboard_Click(object sender, EventArgs e)
+        {
+            var nk = new NumericKeyboard();
+            if (nk.ShowDialog() == DialogResult.OK)
+            {
+                this.upDownSpeed.Value = nk.GetValue();
+            }
+        }
+
         #endregion
 
 #endif

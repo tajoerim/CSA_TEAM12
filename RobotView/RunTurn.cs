@@ -1,42 +1,55 @@
-#define VARIANTE2
-
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Text;
 using System.Windows.Forms;
+using RobotCtrl;
 
 namespace RobotView
 {
     public partial class RunTurn : UserControl
     {
-        public event EventHandler<EventArgs> RunTurnStartPressed;
-
-        public float Angle
-        {
-            get { return (float)upDownAngle.Value; }
-            set { upDownAngle.Value = (decimal)value; }
-        }
-
+        #region constructor & destructor
         public RunTurn()
         {
             InitializeComponent();
-            this.btnStart.Click += BtnStartOnClick;
         }
+        #endregion
 
-        private void BtnStartOnClick(object sender, EventArgs eventArgs)
+
+        #region properties
+        public float Speed { get; set; }
+        public float Acceleration { get; set; }
+        public Drive Drive { get; set; }
+        #endregion
+
+
+        #region methods
+        private void buttonTurnStart_Click(object sender, EventArgs e)
         {
-            RunTurnStartPressed?.Invoke(this, eventArgs);
+            if (Drive != null) Drive.RunTurn(
+                (float)upDownTurnAngle.Value, Speed, Acceleration);
         }
 
-        private void btnSignChanger_Click(object sender, EventArgs e)
+        private void buttonTurnNeg_Click(object sender, EventArgs e)
         {
-            this.upDownAngle.Value = this.upDownAngle.Value * -1;
+            upDownTurnAngle.Value = -upDownTurnAngle.Value;
         }
 
-        private void btnKeyboard_Click(object sender, EventArgs e)
+        public void Start()
+        {
+            buttonTurnStart_Click(null, EventArgs.Empty);
+        }
+        #endregion
+
+        private void btnNumericKeyboardAngle_Click(object sender, EventArgs e)
         {
             NumericKeyboard nk = new NumericKeyboard();
             if (nk.ShowDialog() == DialogResult.OK)
             {
-                this.upDownAngle.Value = nk.GetValue();
+                this.upDownTurnAngle.Value = nk.GetValue();
             }
         }
     }

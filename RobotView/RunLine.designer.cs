@@ -27,106 +27,107 @@ namespace RobotView
         /// </summary>
         private void InitializeComponent()
         {
-            this.label16 = new System.Windows.Forms.Label();
-            this.upDownLength = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnSignChanger = new System.Windows.Forms.Button();
-            this.btnKeyboard = new System.Windows.Forms.Button();
+            this.buttonLineStart = new System.Windows.Forms.Button();
+            this.buttonLineNeg = new System.Windows.Forms.Button();
+            this.upDownLineLength = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnNumericKeybord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label16
+            // buttonLineStart
             // 
-            this.label16.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(0, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(182, 20);
-            this.label16.Text = "RunLine";
+            this.buttonLineStart.Location = new System.Drawing.Point(357, 15);
+            this.buttonLineStart.Name = "buttonLineStart";
+            this.buttonLineStart.Size = new System.Drawing.Size(51, 24);
+            this.buttonLineStart.TabIndex = 18;
+            this.buttonLineStart.Text = "Start";
+            this.buttonLineStart.Click += new System.EventHandler(this.buttonLineStart_Click);
             // 
-            // upDownLength
+            // buttonLineNeg
             // 
-            this.upDownLength.Increment = new decimal(new int[] {
+            this.buttonLineNeg.Location = new System.Drawing.Point(174, 15);
+            this.buttonLineNeg.Name = "buttonLineNeg";
+            this.buttonLineNeg.Size = new System.Drawing.Size(35, 24);
+            this.buttonLineNeg.TabIndex = 19;
+            this.buttonLineNeg.Text = "+/ -";
+            this.buttonLineNeg.Click += new System.EventHandler(this.buttonLineNeg_Click);
+            // 
+            // upDownLineLength
+            // 
+            this.upDownLineLength.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.upDownLength.Location = new System.Drawing.Point(168, 23);
-            this.upDownLength.Maximum = new decimal(new int[] {
-            8000,
+            this.upDownLineLength.Location = new System.Drawing.Point(215, 15);
+            this.upDownLineLength.Maximum = new decimal(new int[] {
+            50000,
             0,
             0,
             0});
-            this.upDownLength.Minimum = new decimal(new int[] {
-            8000,
+            this.upDownLineLength.Minimum = new decimal(new int[] {
+            50000,
             0,
             0,
             -2147483648});
-            this.upDownLength.Name = "upDownLength";
-            this.upDownLength.Size = new System.Drawing.Size(85, 24);
-            this.upDownLength.TabIndex = 21;
-            this.upDownLength.Value = new decimal(new int[] {
+            this.upDownLineLength.Name = "upDownLineLength";
+            this.upDownLineLength.Size = new System.Drawing.Size(75, 32);
+            this.upDownLineLength.TabIndex = 20;
+            this.upDownLineLength.Value = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             // 
-            // label18
+            // label9
             // 
-            this.label18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.label18.Location = new System.Drawing.Point(0, 27);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(172, 20);
-            this.label18.Text = "Length (+ mm/s)";
+            this.label9.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(0, -1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(182, 20);
+            this.label9.Text = "RunLine";
             // 
-            // btnStart
+            // label8
             // 
-            this.btnStart.Location = new System.Drawing.Point(342, 20);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(76, 32);
-            this.btnStart.TabIndex = 24;
-            this.btnStart.Text = "Start";
+            this.label8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.label8.Location = new System.Drawing.Point(3, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 20);
+            this.label8.Text = "Length (+/- mm)";
             // 
-            // btnSignChanger
+            // btnNumericKeybord
             // 
-            this.btnSignChanger.Location = new System.Drawing.Point(119, 20);
-            this.btnSignChanger.Name = "btnSignChanger";
-            this.btnSignChanger.Size = new System.Drawing.Size(39, 32);
-            this.btnSignChanger.TabIndex = 29;
-            this.btnSignChanger.Text = "+/-";
-            this.btnSignChanger.Click += new System.EventHandler(this.btnSignChanger_Click);
-            // 
-            // btnKeyboard
-            // 
-            this.btnKeyboard.Location = new System.Drawing.Point(259, 20);
-            this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(77, 32);
-            this.btnKeyboard.TabIndex = 32;
-            this.btnKeyboard.Text = "...";
-            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            this.btnNumericKeybord.Location = new System.Drawing.Point(300, 15);
+            this.btnNumericKeybord.Name = "btnNumericKeybord";
+            this.btnNumericKeybord.Size = new System.Drawing.Size(51, 24);
+            this.btnNumericKeybord.TabIndex = 23;
+            this.btnNumericKeybord.Text = "...";
+            this.btnNumericKeybord.Click += new System.EventHandler(this.btnNumericKeybord_Click);
             // 
             // RunLine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.btnKeyboard);
-            this.Controls.Add(this.btnSignChanger);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.upDownLength);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.btnNumericKeybord);
+            this.Controls.Add(this.buttonLineStart);
+            this.Controls.Add(this.buttonLineNeg);
+            this.Controls.Add(this.upDownLineLength);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Name = "RunLine";
-            this.Size = new System.Drawing.Size(421, 62);
+            this.Size = new System.Drawing.Size(411, 46);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown upDownLength;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button btnSignChanger;
-        private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Button buttonLineStart;
+        private System.Windows.Forms.Button buttonLineNeg;
+        private System.Windows.Forms.NumericUpDown upDownLineLength;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnNumericKeybord;
     }
 }

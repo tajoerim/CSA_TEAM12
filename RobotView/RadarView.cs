@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using RobotCtrl;
 
@@ -24,6 +25,7 @@ namespace RobotView
         }
         #endregion
 
+        public event EventHandler<DistanceEventArgs> DistanceChanged;
 
         #region properties
         /// <summary>
@@ -43,8 +45,21 @@ namespace RobotView
                 if (value > 255) value = 255;
                 if (value < 0) value = 0;
                 this.progressBar1.Value = value;
+                if (this.DistanceChanged != null)
+                {
+                    this.DistanceChanged(this, new DistanceEventArgs(value));
+                }
             }
         }
         #endregion
+    }
+
+    public class DistanceEventArgs : EventArgs
+    {
+        public int Distance { get; set; }
+        public DistanceEventArgs(int distance)
+        {
+            this.Distance = distance;
+        }
     }
 }

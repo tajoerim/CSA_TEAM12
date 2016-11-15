@@ -1,67 +1,76 @@
-#define VARIANTE2
-
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Text;
 using System.Windows.Forms;
+using RobotCtrl;
 
 namespace RobotView
 {
     public partial class RunArc : UserControl
     {
-        public event EventHandler<EventArgs> RunArcStartPressed;
-
-        public float Angle
-        {
-            get { return (float)upDownRadius.Value / 1000; }
-            set { upDownRadius.Value = (decimal)value * 1000; }
-        }
-
-        public float Radius
-        {
-            get { return (float)upDownRadius.Value / 1000; }
-            set { upDownRadius.Value = (decimal)value * 1000; }
-        }
-
-        public bool TurnLeft
-        {
-            get { return rdLeft.Checked; }
-            set
-            {
-                rdLeft.Checked = value;
-                rdRight.Checked = !value;
-            }
-        }
-
+        #region constructor & destructor
         public RunArc()
         {
             InitializeComponent();
-            this.btnStart.Click += BtnStartOnClick;
+        }
+        #endregion
+
+
+        #region properties
+        public float Speed { get; set; }
+        public float Acceleration { get; set; }
+        public Drive Drive { get; set; }
+        #endregion
+
+
+        #region methods
+        private void buttonArcNeg_Click(object sender, EventArgs e)
+        {
+            upDownArcAngle.Value = -upDownArcAngle.Value;
         }
 
-        private void BtnStartOnClick(object sender, EventArgs eventArgs)
-        {
-            RunArcStartPressed?.Invoke(this, eventArgs);
-        }
 
-        private void btnSignChanger_Click(object sender, EventArgs e)
+        private void buttonStartArc_Click(object sender, EventArgs e)
         {
-            this.upDownAngle.Value = this.upDownAngle.Value * -1;
-        }
-
-        private void btnKeyboardRadius_Click(object sender, EventArgs e)
-        {
-            NumericKeyboard nk = new NumericKeyboard();
-            if (nk.ShowDialog() == DialogResult.OK)
+            if (Drive != null)
             {
-                this.upDownRadius.Value = nk.GetValue();
+                if (radioButtonArcRight.Checked)
+                {
+                    Drive.RunArcRight((float)upDownArcRadius.Value / 1000,
+                        (float)upDownArcAngle.Value, Speed, Acceleration);
+                }
+                else
+                {
+                    Drive.RunArcLeft((float)upDownArcRadius.Value / 1000,
+                        (float)upDownArcAngle.Value, Speed, Acceleration);
+                }
             }
         }
 
-        private void btnKeyboardAngle_Click(object sender, EventArgs e)
+        public void Start()
         {
-            NumericKeyboard nk = new NumericKeyboard();
+            buttonStartArc_Click(null, EventArgs.Empty);
+        }
+        #endregion
+
+        private void btnAngleNumericKeyboard_Click(object sender, EventArgs e)
+        {
+            var nk = new NumericKeyboard();
             if (nk.ShowDialog() == DialogResult.OK)
             {
-                this.upDownAngle.Value = nk.GetValue();
+                this.upDownArcAngle.Value = nk.GetValue();
+            }
+        }
+
+        private void btnRadiusNumericKeyboard_Click(object sender, EventArgs e)
+        {
+            var nk = new NumericKeyboard();
+            if (nk.ShowDialog() == DialogResult.OK)
+            {
+                this.upDownArcRadius.Value = nk.GetValue();
             }
         }
     }

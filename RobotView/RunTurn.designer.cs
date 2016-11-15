@@ -27,106 +27,107 @@ namespace RobotView
         /// </summary>
         private void InitializeComponent()
         {
-            this.label16 = new System.Windows.Forms.Label();
-            this.upDownAngle = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnSignChanger = new System.Windows.Forms.Button();
-            this.btnKeyboard = new System.Windows.Forms.Button();
+            this.buttonTurnStart = new System.Windows.Forms.Button();
+            this.buttonTurnNeg = new System.Windows.Forms.Button();
+            this.upDownTurnAngle = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnNumericKeyboardAngle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label16
+            // buttonTurnStart
             // 
-            this.label16.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(0, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(182, 20);
-            this.label16.Text = "RunTurn";
+            this.buttonTurnStart.Location = new System.Drawing.Point(363, 14);
+            this.buttonTurnStart.Name = "buttonTurnStart";
+            this.buttonTurnStart.Size = new System.Drawing.Size(51, 24);
+            this.buttonTurnStart.TabIndex = 21;
+            this.buttonTurnStart.Text = "Start";
+            this.buttonTurnStart.Click += new System.EventHandler(this.buttonTurnStart_Click);
             // 
-            // upDownAngle
+            // buttonTurnNeg
             // 
-            this.upDownAngle.Increment = new decimal(new int[] {
-            45,
+            this.buttonTurnNeg.Location = new System.Drawing.Point(174, 14);
+            this.buttonTurnNeg.Name = "buttonTurnNeg";
+            this.buttonTurnNeg.Size = new System.Drawing.Size(35, 24);
+            this.buttonTurnNeg.TabIndex = 22;
+            this.buttonTurnNeg.Text = "+/ -";
+            this.buttonTurnNeg.Click += new System.EventHandler(this.buttonTurnNeg_Click);
+            // 
+            // upDownTurnAngle
+            // 
+            this.upDownTurnAngle.Increment = new decimal(new int[] {
+            5,
             0,
             0,
             0});
-            this.upDownAngle.Location = new System.Drawing.Point(181, 25);
-            this.upDownAngle.Maximum = new decimal(new int[] {
-            8000,
+            this.upDownTurnAngle.Location = new System.Drawing.Point(215, 14);
+            this.upDownTurnAngle.Maximum = new decimal(new int[] {
+            360,
             0,
             0,
             0});
-            this.upDownAngle.Minimum = new decimal(new int[] {
-            8000,
+            this.upDownTurnAngle.Minimum = new decimal(new int[] {
+            360,
             0,
             0,
             -2147483648});
-            this.upDownAngle.Name = "upDownAngle";
-            this.upDownAngle.Size = new System.Drawing.Size(85, 24);
-            this.upDownAngle.TabIndex = 21;
-            this.upDownAngle.Value = new decimal(new int[] {
+            this.upDownTurnAngle.Name = "upDownTurnAngle";
+            this.upDownTurnAngle.Size = new System.Drawing.Size(75, 32);
+            this.upDownTurnAngle.TabIndex = 23;
+            this.upDownTurnAngle.Value = new decimal(new int[] {
             90,
             0,
             0,
             0});
             // 
-            // label18
+            // label6
             // 
-            this.label18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
-            this.label18.Location = new System.Drawing.Point(3, 27);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(172, 20);
-            this.label18.Text = "Angle (+/- degrees)";
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(0, -2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(182, 20);
+            this.label6.Text = "RunTurn";
             // 
-            // btnStart
+            // label12
             // 
-            this.btnStart.Location = new System.Drawing.Point(347, 20);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(71, 32);
-            this.btnStart.TabIndex = 24;
-            this.btnStart.Text = "Start";
+            this.label12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular);
+            this.label12.Location = new System.Drawing.Point(3, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 20);
+            this.label12.Text = "Angle (+/- degrees)";
             // 
-            // btnSignChanger
+            // btnNumericKeyboardAngle
             // 
-            this.btnSignChanger.Location = new System.Drawing.Point(136, 20);
-            this.btnSignChanger.Name = "btnSignChanger";
-            this.btnSignChanger.Size = new System.Drawing.Size(39, 32);
-            this.btnSignChanger.TabIndex = 29;
-            this.btnSignChanger.Text = "+/-";
-            this.btnSignChanger.Click += new System.EventHandler(this.btnSignChanger_Click);
-            // 
-            // btnKeyboard
-            // 
-            this.btnKeyboard.Location = new System.Drawing.Point(272, 20);
-            this.btnKeyboard.Name = "btnKeyboard";
-            this.btnKeyboard.Size = new System.Drawing.Size(69, 32);
-            this.btnKeyboard.TabIndex = 32;
-            this.btnKeyboard.Text = "...";
-            this.btnKeyboard.Click += new System.EventHandler(this.btnKeyboard_Click);
+            this.btnNumericKeyboardAngle.Location = new System.Drawing.Point(306, 14);
+            this.btnNumericKeyboardAngle.Name = "btnNumericKeyboardAngle";
+            this.btnNumericKeyboardAngle.Size = new System.Drawing.Size(51, 24);
+            this.btnNumericKeyboardAngle.TabIndex = 26;
+            this.btnNumericKeyboardAngle.Text = "...";
+            this.btnNumericKeyboardAngle.Click += new System.EventHandler(this.btnNumericKeyboardAngle_Click);
             // 
             // RunTurn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.btnKeyboard);
-            this.Controls.Add(this.btnSignChanger);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.upDownAngle);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.btnNumericKeyboardAngle);
+            this.Controls.Add(this.buttonTurnStart);
+            this.Controls.Add(this.buttonTurnNeg);
+            this.Controls.Add(this.upDownTurnAngle);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label12);
             this.Name = "RunTurn";
-            this.Size = new System.Drawing.Size(421, 62);
+            this.Size = new System.Drawing.Size(417, 45);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown upDownAngle;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button btnSignChanger;
-        private System.Windows.Forms.Button btnKeyboard;
+        private System.Windows.Forms.Button buttonTurnStart;
+        private System.Windows.Forms.Button buttonTurnNeg;
+        private System.Windows.Forms.NumericUpDown upDownTurnAngle;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnNumericKeyboardAngle;
     }
 }

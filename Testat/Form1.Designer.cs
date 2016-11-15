@@ -103,39 +103,45 @@ namespace Testat
             // 
             // runTurnParameter
             // 
-            this.runTurnParameter.Angle = 90F;
+            this.runTurnParameter.Acceleration = 0F;
             this.runTurnParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runTurnParameter.Drive = null;
             this.runTurnParameter.Location = new System.Drawing.Point(353, 193);
             this.runTurnParameter.Name = "runTurnParameter";
             this.runTurnParameter.Size = new System.Drawing.Size(429, 62);
+            this.runTurnParameter.Speed = 0F;
             this.runTurnParameter.TabIndex = 5;
             // 
             // runLineParameter
             // 
+            this.runLineParameter.Acceleration = 0F;
             this.runLineParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runLineParameter.Drive = null;
             this.runLineParameter.Length = 1F;
-            this.runLineParameter.Location = new System.Drawing.Point(353, 171);
+            this.runLineParameter.Location = new System.Drawing.Point(353, 137);
             this.runLineParameter.Name = "runLineParameter";
-            this.runLineParameter.Size = new System.Drawing.Size(429, 62);
+            this.runLineParameter.Size = new System.Drawing.Size(528, 62);
+            this.runLineParameter.Speed = 0F;
             this.runLineParameter.TabIndex = 5;
+            
             // 
             // runArcParameter
             // 
-            this.runArcParameter.Angle = 1F;
+            this.runArcParameter.Acceleration = 0F;
             this.runArcParameter.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.runArcParameter.Drive = null;
             this.runArcParameter.Location = new System.Drawing.Point(353, 261);
             this.runArcParameter.Name = "runArcParameter";
-            this.runArcParameter.Radius = 1F;
             this.runArcParameter.Size = new System.Drawing.Size(429, 118);
+            this.runArcParameter.Speed = 0F;
             this.runArcParameter.TabIndex = 5;
-            this.runArcParameter.TurnLeft = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(802, 461);
+            this.ClientSize = new System.Drawing.Size(885, 461);
             this.Controls.Add(this.progressSensor);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonHalt);
